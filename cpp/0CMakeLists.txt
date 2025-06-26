@@ -1,0 +1,37 @@
+# cpp/CMakeLists.txt
+cmake_minimum_required(VERSION 3.10)
+project(tcl_interpreter)
+
+set(CMAKE_CXX_STANDARD 14)
+
+find_package(TCL REQUIRED)
+include_directories(${TCL_INCLUDE_PATH})
+include_directories(../lib/OpenDB/include/opendb)
+include_directories(../lib/OpenDB/src/db)
+include_directories(../lib/OpenDB/include)
+include_directories(../lib/OpenDB/src)
+include_directories(../lib/OpenDB/src/def)
+
+link_directories(
+	../lib/OpenDB/build/src/db
+	../lib/OpenDB/build/src/zutil 	
+)
+
+add_library(tcl_interpreter SHARED tcl_interpreter.cpp)
+
+target_link_libraries(tcl_interpreter
+    ${TCL_LIBRARY}
+    -Wl,--whole-archive
+        ${CMAKE_CURRENT_SOURCE_DIR}/../lib/OpenDB/build/src/db/libopendb.a
+        ${CMAKE_CURRENT_SOURCE_DIR}/../lib/OpenDB/build/src/zutil/libzutil.a
+    -Wl,--no-whole-archive
+)
+
+
+
+#target_link_libraries(tcl_interpreter
+#	${TCL_LIBRARY}
+#	${CMAKE_CURRENT_SOURCE_DIR}/../lib/OpenDB/build/src/db/libopendb.a
+#	${CMAKE_CURRENT_SOURCE_DIR}/../lib/OpenDB/build/src/zutil/libzutil.a
+#)
+

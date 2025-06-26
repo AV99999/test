@@ -1,0 +1,3 @@
+/home/akash/AV/10_OPENROAD_CALL_TO_PY_GUI_TCL/3_TCL_LINKED_PYGUI_COMMANDS/OpenDB_GUI_Project/cpp/build/CMakeFiles/tcl_interpreter.dir
+/home/akash/AV/10_OPENROAD_CALL_TO_PY_GUI_TCL/3_TCL_LINKED_PYGUI_COMMANDS/OpenDB_GUI_Project/cpp/build/CMakeFiles/edit_cache.dir
+/home/akash/AV/10_OPENROAD_CALL_TO_PY_GUI_TCL/3_TCL_LINKED_PYGUI_COMMANDS/OpenDB_GUI_Project/cpp/build/CMakeFiles/rebuild_cache.dir
